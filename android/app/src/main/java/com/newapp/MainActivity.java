@@ -1,4 +1,4 @@
-package com.newapp;
+package com.tudpapp;
 
 import com.facebook.react.ReactActivity;
 

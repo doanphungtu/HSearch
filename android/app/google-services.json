@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "540329029582",
+    "firebase_url": "https://test-scablx.firebaseio.com",
+    "project_id": "test-scablx",
+    "storage_bucket": "test-scablx.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:540329029582:android:f3e61e700069b48997459f",
+        "android_client_info": {
+          "package_name": "com.tudpapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "540329029582-0smi9k9035rfd57aqlonh681gsoorgnc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tudpapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "540329029582-h5cgvvn9siliutj6kuebki3hmmsibl6e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXlVjCzzLkJXD-yGTPJZD2bWs_trnMQtM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "540329029582-berotfv06j2ddgdb5ufl5stgep229n8h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
