@@ -1,5 +1,5 @@
 const Images = {
-  splashScreen: require('./img/spalshscreen.png'),
+  splashScreen: require('./img/splashscreen.png'),
   home: require('./img/home.png'),
   homeC: require('./img/homeC.png'),
   ultiti: require('./img/ultiti.png'),

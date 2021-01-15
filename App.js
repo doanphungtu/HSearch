@@ -11,11 +11,7 @@ export default class App extends React.Component {
     return (
       <Provider store={store}>
         <NavigationContainer>
-          <StatusBar
-            barStyle="light-content"
-            translucent
-            backgroundColor="transparent"
-          />
+          <StatusBar hidden />
           <AppNavigation />
         </NavigationContainer>
       </Provider>

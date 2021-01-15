@@ -4,7 +4,7 @@ import Color from './Color';
 const AppStyles = {
   container: {
     flex: 1,
-    paddingTop: StatusBar.currentHeight,
+    // paddingTop: StatusBar.currentHeight,
     backgroundColor: Color.main,
   },
 };
