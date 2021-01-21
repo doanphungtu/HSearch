@@ -1,36 +1,53 @@
-import React, {useEffect, useState} from 'react';
-import {Button, Image,  View} from 'react-native';
+import React, {useEffect, useRef, useState} from 'react';
+import {ScrollView, Text, View, Animated} from 'react-native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import SafeAreaView from 'react-native-safe-area-view';
 import Images from '../Theme/Images';
+import AnimatedHeader from './AnimatedHeader';
+
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 
 // Styles
 import styles from './Styles/SplashScreenStyles';
-import auth from '@react-native-firebase/auth';
 
 const SplashScreen = (props) => {
-  async function signInWithPhoneNumber(phoneNumber) {
-    try {
-      const confirmation = await auth().signInWithPhoneNumber(phoneNumber);
-      console.log(confirmation);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  const offset = useRef(new Animated.Value(0)).current;
+  const DATA = Array.from({length: 30});
   return (
-    <View style={styles.container}>
-      {/* <Image
-        source={Images.splashScreen}
-        resizeMode="stretch"
-        style={{width: '100%', height: '100%'}}
-      /> */}
-      <View style={{marginTop: 100}}>
-        <Button
-          title="Click"
-          onPress={() => signInWithPhoneNumber('+84968312091')}
-        />
-      </View>
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView style={{flex: 1}} forceInset={{top: 'always'}}>
+        <AnimatedHeader animatedValue={offset} />
+        <ScrollView
+          style={{flex: 1, backgroundColor: 'white'}}
+          contentContainerStyle={{
+            alignItems: 'center',
+            paddingTop: 200,
+          }}
+          showsVerticalScrollIndicator={false}
+          scrollEventThrottle={16}
+          onScroll={Animated.event(
+            [{nativeEvent: {contentOffset: {y: offset}}}],
+            {useNativeDriver: false},
+          )}>
+          {DATA.map((item, index) => (
+            <View
+              key={String(index)}
+              style={{
+                height: 50,
+                width: '100%',
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: 'green',
+                borderBottomColor: 'white',
+                borderBottomWidth: 1,
+              }}>
+              <Text style={{color: 'white', fontSize: 32}}>{index}</Text>
+            </View>
+          ))}
+        </ScrollView>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 
